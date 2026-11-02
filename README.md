@@ -16,7 +16,7 @@ ML-прогноз эффективной толщины пласта по сей
 - проверка на скважинах, полностью исключённых из обучения: ошибка на **26% ниже** базового прогноза;
 - карты неопределённости по ансамблю моделей; карта на ~2 млн узлов строится примерно за минуту.
 
-*Код и данные корпоративные, поэтому в открытом доступе их нет.*
+→ Код, обезличенные данные и результаты: **[seismic-thickness-ml](https://github.com/GalaTimoshenko/seismic-thickness-ml)**
 
 ### 🧰 Стек
 
@@ -37,6 +37,7 @@ ML-прогноз эффективной толщины пласта по сей
 
 | Проект | Задача | Результат |
 |---|---|---|
+| ⭐ [seismic-thickness-ml](https://github.com/GalaTimoshenko/seismic-thickness-ml) | Прогноз толщины пласта по сейсмическим атрибутам, ~60 скважин | Ошибка на скрытых скважинах на 26% ниже baseline, 29 моделей, карты неопределённости, интеграция с tNavigator |
 | [Skillbox_Diploma_ML_Prediction](https://github.com/GalaTimoshenko/Skillbox_Diploma_ML_Prediction) | Предсказание целевого действия пользователя сайта «СберАвтоподписка», ~12 млн событий | ROC-AUC 0.71 при цели 0.65, LightGBM с байесовским подбором гиперпараметров |
 | [ML-Prediction-Test-task](https://github.com/GalaTimoshenko/ML-Prediction-Test-task) | Прогноз оттока клиентов | ROC-AUC ~0.89 на кросс-валидации, отбор признаков 43 → 24 |
 | [ML-prediction--Apache-Airflow-](https://github.com/GalaTimoshenko/ML-prediction--Apache-Airflow-) | Пайплайн «обучение → прогноз» по расписанию в Apache Airflow | DAG из двух задач, модель в pickle, прогнозы по новым данным |
