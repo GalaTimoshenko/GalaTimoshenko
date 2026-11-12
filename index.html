@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Шельфпроект: сводка руководителя</title>
+<meta name="description" content="Демо-сводка для генерального директора на открытых данных прессы. Подготовила Галина Тимошенко.">
+<style>
+:root{--color-fg:#14202c;--color-fg-muted:#5a6876;--color-bg:#f6f8fa;--color-panel:#ffffff;--color-border-line:#d8dee5;--color-ok:#1e7a46;--color-warn:#a15c00;--color-bad:#b42318;
+--c1:#1f5f99;--c2:#2a9d8f;--cds-chart-muted:#b8c2cc;--cds-chart-axis:#7d8a97;--cds-text-secondary:#5a6876;--cds-surface-popover:#ffffff;--cds-border:#d8dee5;--cds-shadow-popover:0 4px 14px rgba(20,32,44,.14);
+--font-anthropic-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;--font-anthropic-serif:Georgia,"PT Serif","Times New Roman",serif;
+--cds-font-size-caption:12px;--cds-font-size-body:14px;--cds-font-size-heading:18px;--cds-font-size-title:28px;--cds-font-weight-medium:600;
+--cds-gap-xs:4px;--cds-gap-sm:8px;--cds-gap-md:12px;--cds-gap-lg:16px;--cds-gap-xl:28px;--cds-pad-sm:8px;--cds-pad-lg:16px;--cds-pad-xl:24px;--cds-radius:10px}
+@media (prefers-color-scheme:dark){:root{--color-fg:#e6ebf0;--color-fg-muted:#9aa7b4;--color-bg:#10161c;--color-panel:#18212a;--color-border-line:#2b3744;--color-ok:#6fd39a;--color-warn:#f2b552;--color-bad:#ff8a7d;
+--c1:#6aa8ec;--c2:#5cc8b8;--cds-chart-muted:#4a5866;--cds-chart-axis:#8796a5;--cds-text-secondary:#9aa7b4;--cds-surface-popover:#202b36;--cds-border:#2b3744;--cds-shadow-popover:0 4px 14px rgba(0,0,0,.5);color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);font-size:14px}
+#dash-root{max-width:1100px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sx-sources{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.sx-sources summary{cursor:pointer}
+.sx-sources a{color:var(--c1)}
+
+/* Layout: инвертированная шапка с 4 крупными цифрами → деньги и перелом флота → карта связей → путь компании → светофор рисков */
+
+/* Layout: инвертированная шапка с 4 крупными цифрами → деньги и перелом флота → карта связей → путь компании → светофор рисков */
+.sx{display:flex;flex-direction:column;gap:var(--cds-gap-xl);font-family:var(--font-anthropic-sans);color:var(--color-fg)}
+.sx-hero{background:var(--color-fg);color:var(--color-bg);border-radius:var(--cds-radius);padding:var(--cds-pad-xl);display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
+.sx-eyebrow{font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+.sx-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0;text-wrap:balance}
+.sx-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--cds-gap-lg)}
+.sx-kpi{display:flex;flex-direction:column;gap:2px;min-width:0;border-top:1px solid color-mix(in srgb,var(--color-bg) 30%,transparent);padding-top:var(--cds-pad-sm)}
+.sx-big{font-family:var(--font-anthropic-serif);font-weight:400;font-size:clamp(34px,6vw,52px);line-height:1;font-variant-numeric:tabular-nums}
+.sx-unit{font-size:var(--cds-font-size-body);opacity:.75;margin-left:4px}
+.sx-cap{font-size:var(--cds-font-size-caption);opacity:.75}
+.sx-tag{display:inline-block;margin-top:4px;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);padding:1px 8px;border-radius:10px;background:var(--color-ok);color:var(--color-bg);width:max-content}
+.sx h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.sx-sec{display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.sx-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--cds-gap-lg)}
+.sx-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-md);min-width:0;position:relative}
+.sx-card h3{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);margin:0}
+.sx-donut{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-lg);min-height:180px}
+.sx-legend{display:flex;flex-direction:column;gap:8px;font-size:var(--cds-font-size-caption)}
+.sx-legend div{display:flex;align-items:center;gap:8px}
+.sx-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.sx-legend b{font-variant-numeric:tabular-nums;font-size:var(--cds-font-size-body)}
+.sx-turn{display:flex;align-items:center;gap:var(--cds-gap-md);flex-wrap:wrap}
+.sx-turn .n{font-family:var(--font-anthropic-serif);font-weight:400;font-size:clamp(28px,4.5vw,40px);font-variant-numeric:tabular-nums;line-height:1}
+.sx-turn .y{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.sx-turn svg{flex:0 0 auto}
+.sx-bad{color:var(--color-bad)} .sx-ok{color:var(--color-ok)}
+.sx-mini{position:relative;min-height:90px}
+.sx-net{position:relative;min-height:300px}
+.sx-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:var(--cds-radius);padding:6px 9px;font-size:var(--cds-font-size-caption);max-width:260px;z-index:2;color:var(--color-fg)}
+.sx svg text{font-family:var(--font-anthropic-sans)}
+.sx-key{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.sx-key span{display:inline-flex;align-items:center;gap:6px}
+.sx-key i{display:inline-block;width:22px;border-top:2px solid var(--cds-chart-axis)}
+.sx-key i.d{border-top-style:dashed}
+.sx-path{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));row-gap:18px;margin:0;padding:0;list-style:none}
+.sx-step{position:relative;padding:18px 10px 0 0;border-top:2px solid var(--color-border-line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.sx-step::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--sx-dot,var(--cds-chart-muted));border:2px solid var(--color-bg)}
+.sx-step .d{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);font-variant-numeric:tabular-nums}
+.sx-step .t{font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);line-height:1.35}
+.sx-lights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--cds-gap-md)}
+.sx-light{border-radius:var(--cds-radius);border:1px solid var(--color-border-line);border-left:6px solid var(--sx-c);background:var(--color-panel);align-self:start}
+.sx-light summary{list-style:none;cursor:pointer;padding:var(--cds-pad-lg);padding-right:40px;display:flex;flex-direction:column;gap:4px;position:relative}
+.sx-light summary::-webkit-details-marker{display:none}
+.sx-light summary::after{content:"";position:absolute;right:16px;top:22px;width:8px;height:8px;border-right:2px solid var(--color-fg-muted);border-bottom:2px solid var(--color-fg-muted);transform:rotate(45deg)}
+.sx-light[open] summary::after{transform:rotate(-135deg);top:26px}
+.sx-light summary:hover{background:color-mix(in srgb,var(--sx-c) 8%,transparent)}
+.sx-light summary:focus-visible{outline:2px solid var(--sx-c);outline-offset:-2px}
+.sx-more{padding:0 var(--cds-pad-lg) var(--cds-pad-lg);display:flex;flex-direction:column;gap:6px;font-size:var(--cds-font-size-body);line-height:1.45}
+.sx-more p{margin:0}
+.sx-src{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.sx-light .k{font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.06em;color:var(--sx-c);font-weight:var(--cds-font-weight-medium)}
+.sx-light .t{font-weight:var(--cds-font-weight-medium)}
+.sx-foot{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin:0}
+[data-dash-source-state=refreshing]{opacity:.5}
+</style>
+</head>
+<body>
+<div id="dash-root">
+<div class="sx" lang="ru" data-read>
+  <header class="sx-hero" id="top">
+    <span class="sx-eyebrow">Газпром шельфпроект · сводка руководителя · открытые данные</span>
+    <h1 class="sx-title">Компания удвоилась и взяла под управление флот</h1>
+    <div class="sx-kpis">
+      <div class="sx-kpi" id="k-rev"><span class="sx-cap">Выручка 2023</span><span><span class="sx-big" data-draw="v-rev" data-source="metrics" data-field="value" data-where="id=sp_rev_2023">—</span><span class="sx-unit">млрд ₽</span></span><span class="sx-tag">×2 к 2022</span></div>
+      <div class="sx-kpi" id="k-margin"><span class="sx-cap">Чистая рентабельность 2023</span><span class="sx-big" data-draw="v-margin" data-source="sp_margin">—</span><span class="sx-cap">прибыль <span data-draw="v-profit" data-source="metrics" data-field="value" data-where="id=sp_profit_2023">—</span> млрд ₽</span></div>
+      <div class="sx-kpi" id="k-staff"><span class="sx-cap">Сотрудников</span><span class="sx-big" data-draw="v-staff" data-source="metrics" data-field="value" data-where="id=sp_staff">—</span><span class="sx-cap">период не указан</span></div>
+      <div class="sx-kpi" id="k-fleet"><span class="sx-cap">Газпром флот, выручка 2025</span><span><span class="sx-big" data-draw="v-fleet" data-source="metrics" data-field="value" data-where="id=fl_rev_2025">—</span><span class="sx-unit">млрд ₽</span></span><span class="sx-tag" data-draw="v-fleet-g" data-source="fleet_growth">—</span></div>
+    </div>
+  </header>
+
+  <section class="sx-two" id="money">
+    <div class="sx-card" id="mix-card">
+      <h3>Откуда выручка, 2023</h3>
+      <div class="sx-donut" data-draw="mix" data-source="mix"></div>
+    </div>
+    <div class="sx-card" id="fleet-card">
+      <h3>Газпром флот: из убытка в прибыль</h3>
+      <div class="sx-turn">
+        <div><div class="n sx-bad" data-draw="v-p24" data-source="metrics" data-field="value" data-where="id=fl_profit_2024">—</div><div class="y">2024, млрд ₽</div></div>
+        <svg width="44" height="20" viewBox="0 0 44 20" aria-hidden="true"><path d="M2 10 H38 M30 3 L40 10 L30 17" style="fill:none;stroke:var(--cds-chart-axis);stroke-width:2"></path></svg>
+        <div><div class="n sx-ok" data-draw="v-p25" data-source="metrics" data-field="value" data-where="id=fl_profit_2025">—</div><div class="y">2025, млрд ₽</div></div>
+      </div>
+      <span class="sx-foot">Выручка флота</span>
+      <div class="sx-mini" data-draw="fleet" data-source="metrics"></div>
+    </div>
+  </section>
+
+  <section class="sx-sec" id="links">
+    <h2>Карта связей</h2>
+    <div class="sx-key"><span><i></i>факт</span><span><i class="d"></i>мой вывод</span><span>наведите на номер</span></div>
+    <div class="sx-card"><div class="sx-net" id="net" data-draw="net" data-source="nodes links"></div></div>
+  </section>
+
+  <section class="sx-sec" id="path">
+    <h2>Путь компании</h2>
+    <ol class="sx-path" data-draw="path" data-source="events"></ol>
+  </section>
+
+  <section class="sx-sec" id="lights">
+    <h2>Риски и возможности</h2>
+    <p class="sx-foot">Нажмите на карточку: откроются детали, а на карте связей подсветятся участники.</p>
+    <div class="sx-lights">
+      <details class="sx-light" id="r-client" style="--sx-c:var(--color-bad)" data-nodes="Газпром|Газпром шельфпроект|Бурение: Арктика и Сахалин">
+        <summary><span class="k">Риск</span><span class="t">Один заказчик и акционер</span><span class="sx-foot">Загрузка зависит от инвестпрограммы Газпрома</span></summary>
+        <div class="sx-more">
+          <p>Газпром владеет 50% компании и даёт основной объём заказов. Строительство скважин — <b data-draw="r-wells" data-source="metrics" data-field="value" data-where="id=sp_share_wells">—</b>% выручки 2023 года.</p>
+          <p><b>Что отслеживать:</b> портфель контрактов по заказчикам и долю Газпрома в нём.</p>
+          <p class="sx-src">Факты: Коммерсант, 17.04.2024. Вывод о риске мой.</p>
+        </div>
+      </details>
+      <details class="sx-light" id="r-sanctions" style="--sx-c:var(--color-warn)" data-nodes="Санкции США и ЕС|Газпром флот">
+        <summary><span class="k">Внимание</span><span class="t">Санкции на флот</span><span class="sx-foot">Ремонт, запчасти, страхование судов</span></summary>
+        <div class="sx-more">
+          <p>Газпром флот под санкциями США и ЕС, в апреле 2026 года добавлен в 20-й пакет ЕС. Это риск для ремонтов, поставок запчастей и графиков морских работ.</p>
+          <p><b>Что отслеживать:</b> график ремонтов и простои судов по причинам.</p>
+          <p class="sx-src">Факты: Деловой Петербург, 19.06.2026. Последствия — мой вывод.</p>
+        </div>
+      </details>
+      <details class="sx-light" id="r-fleet" style="--sx-c:var(--color-ok)" data-nodes="Газпром флот|Буровые установки|Газпром шельфпроект">
+        <summary><span class="k">Возможность</span><span class="t">Флот и установки в одних руках</span><span class="sx-foot">Единый план загрузки вместо аренды</span></summary>
+        <div class="sx-more">
+          <p>До 2022 года буровые установки арендовались у Газпром флота. С июня 2026 года флот под управлением компании, и суда с установками можно планировать вместе.</p>
+          <p><b>Что отслеживать:</b> загрузку судов и установок по месяцам на одном графике.</p>
+          <p class="sx-src">Факты: Коммерсант, 17.04.2024; Деловой Петербург, 19.06.2026. Вывод о возможности мой.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <p class="sx-foot">Демо Галины Тимошенко на данных прессы. С внутренними данными: план-факт по проектам, загрузка флота, поручения генерального директора.</p>
+  <details class="sx-sources" id="sources">
+    <summary>Источники</summary>
+    <ul>
+      <li><a href="https://www.kommersant.ru/doc/6650796" target="_blank" rel="noopener">Коммерсант, 17.04.2024</a>: выручка и прибыль 2023, структура выручки, буровые установки, акционеры</li>
+      <li><a href="https://www.dp.ru/a/2026/06/19/gazprom-shelfproekt-stal" target="_blank" rel="noopener">Деловой Петербург, 19.06.2026</a>: управление Газпром флотом, финансы флота 2024–2025, Фертоинг, санкции, численность</li>
+      <li><a href="https://spb.vedomosti.ru/economics/news/2026/06/19/1207363-peterburgskii-gazprom-flot-pereshel-pod-upravlenie-novoi" target="_blank" rel="noopener">Ведомости Северо-Запад, 19.06.2026</a></li>
+      <li><a href="https://neftegaz.ru/news/exhibitions/940746-v-moskve-sostoyalas-xix-konferentsiya-neftegazshelf-2026/" target="_blank" rel="noopener">neftegaz.ru, 30.10.2026</a>: конференция «Нефтегазшельф-2026»</li>
+    </ul>
+  </details>
+</div>
+</div>
+<script src="d3.min.js"></script>
+<script>
+(function(){
+  const DATA={"metrics": [{"id": "sp_rev_2023", "company": "Газпром шельфпроект", "metric": "Выручка", "year": "2023", "value": 61.1, "unit": "млрд руб.", "source": "Коммерсант, 17.04.2024"}, {"id": "sp_profit_2023", "company": "Газпром шельфпроект", "metric": "Чистая прибыль", "year": "2023", "value": 7.0, "unit": "млрд руб.", "source": "Коммерсант, 17.04.2024"}, {"id": "sp_staff", "company": "Газпром шельфпроект", "metric": "Численность", "year": "период не указан (публикация 06.2026)", "value": 965, "unit": "чел.", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"id": "sp_share_wells", "company": "Газпром шельфпроект", "metric": "Доля выручки: строительство скважин", "year": "2023", "value": 47, "unit": "%", "source": "Коммерсант, 17.04.2024"}, {"id": "sp_share_fields", "company": "Газпром шельфпроект", "metric": "Доля выручки: обустройство месторождений", "year": "2023", "value": 27, "unit": "%", "source": "Коммерсант, 17.04.2024"}, {"id": "sp_kamen_2023", "company": "Газпром шельфпроект", "metric": "Выручка: ЛСП «Каменномысская»", "year": "2023", "value": 4.4, "unit": "млрд руб.", "source": "Коммерсант, 17.04.2024"}, {"id": "fl_rev_2023", "company": "Газпром флот", "metric": "Выручка", "year": "2023", "value": 7.1, "unit": "млрд руб.", "source": "Коммерсант, 17.04.2024"}, {"id": "fl_rev_2025", "company": "Газпром флот", "metric": "Выручка", "year": "2025", "value": 9.9, "unit": "млрд руб.", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"id": "fl_profit_2024", "company": "Газпром флот", "metric": "Чистая прибыль", "year": "2024", "value": -0.389, "unit": "млрд руб.", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"id": "fl_profit_2025", "company": "Газпром флот", "metric": "Чистая прибыль", "year": "2025", "value": 0.329, "unit": "млрд руб.", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"id": "fl_assets_2025", "company": "Газпром флот", "metric": "Активы на конец года", "year": "2025", "value": 42.9, "unit": "млрд руб.", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}], "events": [{"date": "2022-04", "event": "Газпром передал компании три буровые установки: ППБУ «Полярная звезда», «Северное сияние», СПБУ «Арктическая» (раньше их арендовали у Газпром флота)", "kind": "Активы", "source": "Коммерсант, 17.04.2024", "short": "3 буровые установки от Газпрома"}, {"date": "2022-06", "event": "Компания «Аврора» переименована в «Газпром шельфпроект»; генеральный директор — А. Н. Коробков (с 30.06.2022)", "kind": "Управление", "source": "Коммерсант, 17.04.2024; Деловой Петербург и Ведомости СЗ, 19.06.2026", "short": "Новое имя, Коробков во главе"}, {"date": "2023-01", "event": "Газпром получил 50% капитала", "kind": "Акционер", "source": "Коммерсант, 17.04.2024", "short": "Газпром получил 50%"}, {"date": "2023-12", "event": "Выручка за 2023 год выросла более чем вдвое, до 61,1 млрд руб.", "kind": "Финансы", "source": "Коммерсант, 17.04.2024", "short": "Выручка выросла вдвое"}, {"date": "2025-01", "event": "Куплен петербургский подводный бизнес «Фертоинг» (месяц в источнике не указан)", "kind": "Сделка", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026", "short": "Покупка «Фертоинга»"}, {"date": "2026-04", "event": "ЕС включил Газпром флот в 20-й пакет санкций", "kind": "Риск", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026", "short": "Санкции ЕС на флот"}, {"date": "2026-06", "event": "С 17 июня компания — управляющая организация Газпром флота", "kind": "Сделка", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026", "short": "Управление Газпром флотом"}, {"date": "2026-10", "event": "Конференция «Нефтегазшельф-2026» при поддержке компании: результаты кооперации по отечественным подводным добычным комплексам", "kind": "Технологии", "source": "neftegaz.ru, 30.10.2026", "short": "Отечественные ПДК"}], "nodes": [{"node": "Газпром", "note": "акционер 50%, заказчик", "col": 0, "row": 0}, {"node": "Газпром шельфпроект", "note": "965 сотрудников", "col": 1, "row": 1}, {"node": "Газпром флот", "note": "под управлением с 06.2026", "col": 2, "row": 0}, {"node": "Фертоинг", "note": "подводные работы, куплен 2025", "col": 2, "row": 1}, {"node": "Буровые установки", "note": "3 установки с 2022", "col": 2, "row": 2}, {"node": "Санкции США и ЕС", "note": "на Газпром флот", "col": 3, "row": 0}, {"node": "Подводные добычные комплексы", "note": "отечественная кооперация", "col": 3, "row": 1}, {"node": "Бурение: Арктика и Сахалин", "note": "47% выручки 2023", "col": 3, "row": 2}, {"node": "ЛСП «Каменномысская»", "note": "4,4 млрд руб. в 2023", "col": 2, "row": 3}], "links": [{"n": 1, "src": "Газпром", "dst": "Газпром шельфпроект", "relation": "50% капитала с 2023 года; главный заказчик морского бурения", "kind": "факт", "source": "Коммерсант, 17.04.2024"}, {"n": 2, "src": "Газпром", "dst": "Газпром флот", "relation": "владеет 100%", "kind": "факт", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"n": 3, "src": "Газпром шельфпроект", "dst": "Газпром флот", "relation": "управляющая организация с 17.06.2026", "kind": "факт", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"n": 4, "src": "Газпром шельфпроект", "dst": "Фертоинг", "relation": "покупка в 2025 году", "kind": "факт", "source": "Деловой Петербург и Ведомости СЗ, 19.06.2026"}, {"n": 5, "src": "Газпром шельфпроект", "dst": "Буровые установки", "relation": "оператор с 2022 года; раньше установки арендовались у Газпром флота", "kind": "факт", "source": "Коммерсант, 17.04.2024"}, {"n": 6, "src": "Буровые установки", "dst": "Бурение: Арктика и Сахалин", "relation": "строительство скважин — 47% выручки 2023", "kind": "факт", "source": "Коммерсант, 17.04.2024"}, {"n": 7, "src": "Газпром шельфпроект", "dst": "ЛСП «Каменномысская»", "relation": "строительство платформы — 4,4 млрд руб. выручки в 2023", "kind": "факт", "source": "Коммерсант, 17.04.2024"}, {"n": 8, "src": "Санкции США и ЕС", "dst": "Газпром флот", "relation": "ограничения на ремонт, запчасти и страхование судов", "kind": "вывод", "source": "мой вывод из факта санкций"}, {"n": 9, "src": "Фертоинг", "dst": "Подводные добычные комплексы", "relation": "подводные работы внутри группы для монтажа комплексов", "kind": "вывод", "source": "мой вывод: профиль Фертоинга + проекты ПДК"}]};
+  const calcs={}, draws=[], listeners=[];
+  const cache={};
+  function compute(id){const c=calcs[id];return c.fn(...c.inputs.map(i=>calcs[i]?compute(i):DATA[i]));}
+  window.dash={
+    colors:['var(--c1)','var(--c2)'],
+    data(id){ if(DATA[id]) return {status:'ok',data:DATA[id]}; if(calcs[id]) return {status:'ok',data:compute(id)}; return {status:'missing',data:[]}; },
+    calc(id,o){calcs[id]=o;},
+    loader(){},
+    onData(fn){listeners.push(fn);fn();},
+    draw(name,fn){ if(fn){draws.push([name,fn]);} else { run(name); } },
+    params(){return{};}, setParams(){}, resetParams(){}, setLink(){}, refresh(){}
+  };
+  function run(only){ draws.forEach(([n,f])=>{ if(only&&n!==only) return; document.querySelectorAll('[data-draw="'+n+'"]').forEach(el=>{ if(el.closest('[hidden]')) return; try{ (typeof f==='function'?f:f.update)(el); }catch(e){console.error(n,e);} }); }); }
+  window.__dashRunAll=run;
+  let w=window.innerWidth; window.addEventListener('resize',()=>{ if(Math.abs(window.innerWidth-w)>4){ w=window.innerWidth; run(); } });
+})();
+</script>
+<script>
+window.SX = {
+  num(v, d) { return Number(v).toLocaleString('ru-RU', {minimumFractionDigits: d, maximumFractionDigits: d}); },
+  row(id) { const m = dash.data('metrics'); return m.status === 'ok' ? m.data.find((r) => r.id === id) : null; },
+  tip(box) {
+    let t = box.querySelector('.sx-tip');
+    if (!t) { t = document.createElement('div'); t.className = 'sx-tip'; t.hidden = true; box.appendChild(t); }
+    return {
+      show(ev, text) { t.textContent = text; t.hidden = false; const b = box.getBoundingClientRect(); const x = Math.min(ev.clientX - b.left + 12, box.clientWidth - t.offsetWidth - 4); t.style.left = Math.max(0, x) + 'px'; t.style.top = (ev.clientY - b.top + 12) + 'px'; },
+      hide() { t.hidden = true; }
+    };
+  }
+};
+
+dash.calc('sp_margin', {
+  title: 'Чистая рентабельность 2023',
+  description: 'Чистая прибыль 2023 года, делённая на выручку 2023 года, в процентах.',
+  inputs: ['metrics'],
+  fn: (metrics) => {
+    const g = (id) => Number((metrics.find((r) => r.id === id) || {}).value);
+    const rev = g('sp_rev_2023'), profit = g('sp_profit_2023');
+    return rev ? Math.round(profit / rev * 1000) / 10 : null;
+  }
+});
+dash.calc('fleet_growth', {
+  title: 'Рост выручки Газпром флота 2023→2025',
+  description: 'Изменение выручки 2025 года к 2023 году, в процентах.',
+  inputs: ['metrics'],
+  fn: (metrics) => {
+    const g = (id) => Number((metrics.find((r) => r.id === id) || {}).value);
+    const a = g('fl_rev_2023'), b = g('fl_rev_2025');
+    return a ? Math.round((b / a - 1) * 100) : null;
+  }
+});
+dash.calc('mix', {
+  title: 'Структура выручки 2023',
+  description: 'Доли строительства скважин и обустройства месторождений из источника, «прочее» — остаток до 100%; суммы — доля × выручка 2023.',
+  inputs: ['metrics'],
+  fn: (metrics) => {
+    const g = (id) => Number((metrics.find((r) => r.id === id) || {}).value);
+    const rev = g('sp_rev_2023'), w = g('sp_share_wells'), f = g('sp_share_fields');
+    return [['Строительство скважин', w], ['Обустройство месторождений', f], ['Прочее', 100 - w - f]]
+      .map(([segment, share]) => ({segment, share, rub: Math.round(rev * share / 10) / 10}));
+  }
+});
+
+function sxValue(name, id, digits, signed) {
+  dash.draw(name, (el) => {
+    const r = SX.row(id);
+    if (!r) { el.textContent = '—'; return; }
+    const v = Number(r.value);
+    el.textContent = (signed && v > 0 ? '+' : '') + SX.num(v, digits);
+  });
+}
+sxValue('v-rev', 'sp_rev_2023', 1);
+sxValue('v-profit', 'sp_profit_2023', 1);
+sxValue('v-staff', 'sp_staff', 0);
+sxValue('v-fleet', 'fl_rev_2025', 1);
+sxValue('v-p24', 'fl_profit_2024', 3);
+sxValue('v-p25', 'fl_profit_2025', 3, true);
+sxValue('r-wells', 'sp_share_wells', 0);
+document.querySelectorAll('.sx-light').forEach((d) => d.addEventListener('toggle', () => dash.draw('net')));
+
+dash.draw('v-margin', (el) => {
+  const c = dash.data('sp_margin');
+  el.textContent = c.status === 'ok' && c.data != null ? SX.num(c.data, 1) + '%' : '—';
+});
+dash.draw('v-fleet-g', (el) => {
+  const c = dash.data('fleet_growth');
+  el.textContent = c.status === 'ok' && c.data != null ? (c.data > 0 ? '+' : '') + SX.num(c.data, 0) + '% к 2023' : '—';
+});
+
+dash.draw('mix', (el) => {
+  const d = dash.data('mix');
+  el.replaceChildren();
+  if (d.status !== 'ok' || !d.data) { el.textContent = d.status === 'error' ? 'Не загрузилось' : '—'; return; }
+  const S = 170, R = S / 2, colors = [dash.colors[0], dash.colors[1] || dash.colors[0], 'var(--cds-chart-muted)'];
+  const wrap = document.createElement('div'); wrap.style.position = 'relative'; wrap.style.width = S + 'px'; wrap.style.height = S + 'px';
+  el.appendChild(wrap);
+  const svg = d3.select(wrap).append('svg').attr('width', S).attr('height', S).attr('viewBox', `0 0 ${S} ${S}`).attr('role', 'img').attr('aria-label', 'Структура выручки 2023 года');
+  const g = svg.append('g').attr('transform', `translate(${R},${R})`);
+  const arcs = d3.pie().sort(null).value((r) => r.share)(d.data);
+  const arc = d3.arc().innerRadius(R * 0.62).outerRadius(R - 2).padAngle(0.015);
+  const tip = SX.tip(el);
+  g.selectAll('path').data(arcs).join('path').attr('d', arc).style('fill', (a, i) => colors[i])
+    .on('mousemove', (ev, a) => tip.show(ev, `${a.data.segment}: ${SX.num(a.data.share, 0)}% ≈ ${SX.num(a.data.rub, 1)} млрд ₽`)).on('mouseleave', tip.hide);
+  const rev = SX.row('sp_rev_2023');
+  g.append('text').attr('text-anchor', 'middle').attr('dy', '0.1em').style('font-family', 'var(--font-anthropic-serif)').style('font-size', '28px').style('fill', 'var(--color-fg)').text(rev ? SX.num(rev.value, 1) : '—');
+  g.append('text').attr('text-anchor', 'middle').attr('dy', '1.6em').style('font-size', '11px').style('fill', 'var(--cds-text-secondary)').text('млрд ₽');
+  const leg = document.createElement('div'); leg.className = 'sx-legend'; el.appendChild(leg);
+  d.data.forEach((r, i) => {
+    const row = document.createElement('div');
+    const sw = document.createElement('i'); sw.style.background = colors[i];
+    const b = document.createElement('b'); b.textContent = SX.num(r.share, 0) + '%';
+    const s = document.createElement('span'); s.textContent = r.segment;
+    row.append(sw, b, s); leg.appendChild(row);
+  });
+});
+
+dash.draw('fleet', (el) => {
+  el.replaceChildren();
+  const rows = ['fl_rev_2023', 'fl_rev_2025'].map((id) => SX.row(id)).filter(Boolean);
+  if (!rows.length) { el.textContent = '—'; return; }
+  const W = el.clientWidth || 300, rowH = 30, H = rows.length * rowH + 4, lab = 44;
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (r) => Number(r.value))]).range([0, W - lab - 70]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Выручка Газпром флота, 2023 и 2025 годы');
+  const tip = SX.tip(el);
+  rows.forEach((r, i) => {
+    const y = i * rowH + 4;
+    svg.append('text').attr('x', 0).attr('y', y + 13).style('font-size', '12px').style('fill', 'var(--cds-text-secondary)').text(r.year);
+    svg.append('rect').attr('x', lab).attr('y', y + 2).attr('height', 14).attr('rx', 2).attr('width', x(r.value)).style('fill', i ? dash.colors[0] : 'var(--cds-chart-muted)')
+      .on('mousemove', (ev) => tip.show(ev, `Выручка ${r.year}: ${SX.num(r.value, 1)} млрд ₽ (${r.source})`)).on('mouseleave', tip.hide);
+    svg.append('text').attr('x', lab + x(r.value) + 6).attr('y', y + 13).style('font-size', '12px').style('fill', 'var(--color-fg)').text(SX.num(r.value, 1) + ' млрд');
+  });
+});
+
+dash.draw('path', (ol) => {
+  const d = dash.data('events');
+  ol.replaceChildren();
+  if (d.status !== 'ok') return;
+  const dot = {'Риск': 'var(--color-bad)', 'Сделка': dash.colors[0], 'Акционер': dash.colors[1] || dash.colors[0], 'Финансы': 'var(--color-ok)'};
+  d.data.forEach((r) => {
+    const li = document.createElement('li'); li.className = 'sx-step'; li.dataset.key = r.date; li.title = r.event;
+    if (dot[r.kind]) li.style.setProperty('--sx-dot', dot[r.kind]);
+    const [y, m] = String(r.date).split('-');
+    const dd = document.createElement('span'); dd.className = 'd'; dd.textContent = m + '.' + y;
+    const tt = document.createElement('span'); tt.className = 't'; tt.textContent = r.short;
+    li.append(dd, tt); ol.appendChild(li);
+  });
+});
+
+dash.draw('net', (el) => {
+  const N = dash.data('nodes'), L = dash.data('links');
+  el.replaceChildren();
+  if (N.status !== 'ok' || L.status !== 'ok') { el.textContent = (N.status === 'error' || L.status === 'error') ? 'Не загрузилось' : '—'; return; }
+  const nodes = N.data, links = L.data, W = el.clientWidth || 700, wide = W >= 620;
+  const cols = d3.max(nodes, (n) => +n.col) + 1, rowsN = d3.max(nodes, (n) => +n.row) + 1;
+  const boxH = 42, pos = new Map();
+  let boxW, H;
+  if (wide) {
+    boxW = Math.min(170, (W - 10) / cols - 36); const gapY = 26;
+    H = rowsN * (boxH + gapY);
+    const cx = (c) => 4 + boxW / 2 + c * ((W - boxW - 8) / (cols - 1));
+    nodes.forEach((n) => pos.set(n.node, {x: cx(+n.col), y: +n.row * (boxH + gapY) + boxH / 2 + 4}));
+  } else {
+    boxW = Math.min(240, W - 70); const gapY = 16;
+    const order = nodes.slice().sort((a, b) => (+a.col - +b.col) || (+a.row - +b.row));
+    order.forEach((n, i) => pos.set(n.node, {x: 4 + boxW / 2 + (+n.col % 2) * 14, y: i * (boxH + gapY) + boxH / 2 + 4}));
+    H = order.length * (boxH + gapY) + 4;
+  }
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Карта связей: Газпром, Газпром шельфпроект, Газпром флот, Фертоинг, буровые установки, проекты и санкции');
+  svg.append('defs').append('marker').attr('id', 'sx-arrow').attr('viewBox', '0 0 10 10').attr('refX', 9).attr('refY', 5).attr('markerWidth', 7).attr('markerHeight', 7).attr('orient', 'auto-start-reverse')
+    .append('path').attr('d', 'M0,0L10,5L0,10z').style('fill', 'var(--cds-chart-axis)');
+  const tip = SX.tip(el);
+  const edge = (a, b) => {
+    if (wide) {
+      let sx = a.x, sy = a.y, tx = b.x, ty = b.y;
+      if (Math.abs(b.x - a.x) > 1) { sx += Math.sign(b.x - a.x) * boxW / 2; tx -= Math.sign(b.x - a.x) * boxW / 2; }
+      else { sy += Math.sign(b.y - a.y) * boxH / 2; ty -= Math.sign(b.y - a.y) * boxH / 2; }
+      const mx = (sx + tx) / 2;
+      return {d: Math.abs(b.x - a.x) > 1 ? `M${sx},${sy} C${mx},${sy} ${mx},${ty} ${tx},${ty}` : `M${sx},${sy} L${tx},${ty}`, mx, my: (sy + ty) / 2};
+    }
+    const sx = a.x + boxW / 2, off = 14 + Math.abs(a.y - b.y) / 12, ex = Math.min(W - 14, sx + off);
+    return {d: `M${sx},${a.y} C${ex},${a.y} ${ex},${b.y} ${b.x + boxW / 2},${b.y}`, mx: ex - 3, my: (a.y + b.y) / 2};
+  };
+  const g = svg.append('g');
+  const badges = [];
+  links.forEach((l) => {
+    const a = pos.get(l.src), b = pos.get(l.dst); if (!a || !b) return;
+    const e = edge(a, b), text = `${l.n}. ${l.src} → ${l.dst}: ${l.relation} (${l.kind}; ${l.source})`;
+    g.append('path').attr('d', e.d).attr('marker-end', 'url(#sx-arrow)').style('fill', 'none').style('stroke', 'var(--cds-chart-axis)').style('stroke-width', 1.5).style('stroke-dasharray', l.kind === 'вывод' ? '5 4' : null);
+    g.append('path').attr('d', e.d).style('fill', 'none').style('stroke', 'transparent').style('stroke-width', 12).on('mousemove', (ev) => tip.show(ev, text)).on('mouseleave', tip.hide);
+    badges.push({x: e.mx, y: e.my, n: l.n, text});
+  });
+  const hl = new Set();
+  document.querySelectorAll('.sx-light[open]').forEach((d) => String(d.dataset.nodes || '').split('|').forEach((x) => hl.add(x)));
+  nodes.forEach((n) => {
+    const p = pos.get(n.node), main = n.node === 'Газпром шельфпроект', on = hl.has(n.node), dim = hl.size && !on;
+    const ng = svg.append('g').attr('transform', `translate(${p.x - boxW / 2},${p.y - boxH / 2})`);
+    ng.style('opacity', dim ? 0.35 : 1);
+    ng.append('rect').attr('width', boxW).attr('height', boxH).attr('rx', 6).style('fill', main ? dash.colors[0] : 'var(--color-panel)').style('stroke', on ? 'var(--color-fg)' : main ? dash.colors[0] : 'var(--color-border-line)').style('stroke-width', on ? 2.5 : 1);
+    ng.append('text').attr('x', 8).attr('y', 17).style('font-size', '12px').style('font-weight', 600).style('fill', main ? 'var(--color-bg)' : 'var(--color-fg)').text(n.node);
+    ng.append('text').attr('x', 8).attr('y', 33).style('font-size', '11px').style('fill', main ? 'var(--color-bg)' : 'var(--cds-text-secondary)').text(n.note);
+    ng.selectAll('text').each(function () { let s = this.textContent; while (this.getComputedTextLength() > boxW - 14 && s.length > 4) { s = s.slice(0, -2); this.textContent = s + '…'; } });
+    ng.on('mousemove', (ev) => tip.show(ev, `${n.node}: ${n.note}`)).on('mouseleave', tip.hide);
+  });
+  badges.forEach((bd) => {
+    const bg = svg.append('g').attr('transform', `translate(${bd.x},${bd.y})`).on('mousemove', (ev) => tip.show(ev, bd.text)).on('mouseleave', tip.hide);
+    bg.append('circle').attr('r', 9).style('fill', 'var(--color-bg)').style('stroke', 'var(--cds-chart-axis)');
+    bg.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em').style('font-size', '10px').style('fill', 'var(--color-fg)').text(bd.n);
+  });
+});
+
+window.__dashRunAll();
+</script>
+</body>
+</html>
