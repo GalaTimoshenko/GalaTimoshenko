@@ -49,6 +49,3 @@ ML-прогноз эффективной толщины пласта по сей
 - Санкт-Петербургский горный университет, геофизика
 - Data Scientist / ML Engineer — Skillbox; Аналитик данных — ТГУ
 
-### 📫 Контакты
-
-[galashestakova@gmail.com](mailto:galashestakova@gmail.com) · Санкт-Петербург · открыта к удалённой работе
