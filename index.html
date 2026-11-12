@@ -48,7 +48,10 @@ body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(-
 .sx-turn .y{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
 .sx-turn svg{flex:0 0 auto}
 .sx-bad{color:var(--color-bad)} .sx-ok{color:var(--color-ok)}
-.sx-mini{position:relative;min-height:90px}
+.sx-mini{position:relative;min-height:70px}
+.sx-adds{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:var(--cds-font-size-body);line-height:1.4}
+.sx-adds li{display:grid;grid-template-columns:64px 1fr;gap:8px}
+.sx-adds .d{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);font-variant-numeric:tabular-nums;padding-top:2px}
 .sx-net{position:relative;min-height:300px}
 .sx-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:var(--cds-radius);padding:6px 9px;font-size:var(--cds-font-size-caption);max-width:260px;z-index:2;color:var(--color-fg)}
 .sx svg text{font-family:var(--font-anthropic-sans)}
@@ -83,15 +86,14 @@ body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(-
 <div class="sx" lang="ru" data-read>
   <header class="sx-hero" id="top">
     <span class="sx-eyebrow">Газпром шельфпроект · сводка руководителя · открытые данные</span>
-    <h1 class="sx-title">Компания растёт: выручка 2023 года вдвое больше, чем в 2022-м, а с июня 2026 года под Коробковым ещё и Газпром флот</h1>
+    <h1 class="sx-title">Компания растёт: выручка выросла вдвое, а под управлением теперь и флот</h1>
     <div class="sx-kpis">
       <div class="sx-kpi" id="k-rev"><span class="sx-cap">Выручка 2023</span><span><span class="sx-big" data-draw="v-rev" data-source="metrics" data-field="value" data-where="id=sp_rev_2023">—</span><span class="sx-unit">млрд ₽</span></span><span class="sx-tag">×2 к 2022</span></div>
       <div class="sx-kpi" id="k-margin"><span class="sx-cap">Чистая рентабельность 2023</span><span class="sx-big" data-draw="v-margin" data-source="sp_margin">—</span><span class="sx-cap">прибыль <span data-draw="v-profit" data-source="metrics" data-field="value" data-where="id=sp_profit_2023">—</span> млрд ₽</span></div>
       <div class="sx-kpi" id="k-staff"><span class="sx-cap">Сотрудников</span><span class="sx-big" data-draw="v-staff" data-source="metrics" data-field="value" data-where="id=sp_staff">—</span><span class="sx-cap">период не указан</span></div>
-      <div class="sx-kpi" id="k-kamen"><span class="sx-cap">ЛСП «Каменномысская», выручка 2023</span><span><span class="sx-big" data-draw="v-kamen" data-source="metrics" data-field="value" data-where="id=sp_kamen_2023">—</span><span class="sx-unit">млрд ₽</span></span><span class="sx-cap">более 7% выручки</span></div>
+      <div class="sx-kpi" id="k-added"><span class="sx-cap">Добавилось к компании</span><span><span class="sx-big" data-draw="v-added" data-source="added_total">—</span><span class="sx-unit">млрд ₽</span></span><span class="sx-cap">выручка флота и Фертоинга</span></div>
     </div>
-    <span class="sx-cap" style="font-weight:600">+ С июня 2026 года добавился Газпром флот: шельфпроект (гендиректор А. Н. Коробков) управляет им. Выручка флота 9,9 млрд ₽, активы 42,9 млрд ₽ (2025). Флот ведёт отдельную отчётность, поэтому его цифры не складываются с выручкой шельфпроекта.</span>
-    <span class="sx-cap">Выручки самого шельфпроекта за 2024–2025 годы в открытых источниках нет; годовая отчётность за 2026 год появится весной 2027-го.</span>
+    <span class="sx-cap">Выручки самого шельфпроекта за 2024–2025 годы в открытых источниках нет; отчётность за 2026 год появится весной 2027-го.</span>
   </header>
 
   <section class="sx-two" id="money">
@@ -99,16 +101,15 @@ body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(-
       <h3>Откуда выручка, 2023</h3>
       <div class="sx-donut" data-draw="mix" data-source="mix"></div>
     </div>
-    <div class="sx-card" id="fleet-card">
-      <h3>Добавилось в 2026: Газпром флот, из убытка в прибыль</h3>
-      <span class="sx-foot">С июня 2026 года под управлением шельфпроекта и Коробкова; юридически отдельная компания (100% Газпром)</span>
-      <div class="sx-turn">
-        <div><div class="n sx-bad" data-draw="v-p24" data-source="metrics" data-field="value" data-where="id=fl_profit_2024">—</div><div class="y">2024, млрд ₽</div></div>
-        <svg width="44" height="20" viewBox="0 0 44 20" aria-hidden="true"><path d="M2 10 H38 M30 3 L40 10 L30 17" style="fill:none;stroke:var(--cds-chart-axis);stroke-width:2"></path></svg>
-        <div><div class="n sx-ok" data-draw="v-p25" data-source="metrics" data-field="value" data-where="id=fl_profit_2025">—</div><div class="y">2025, млрд ₽</div></div>
-      </div>
-      <span class="sx-foot">Выручка флота</span>
-      <div class="sx-mini" data-draw="fleet" data-source="metrics"></div>
+    <div class="sx-card" id="growth-card">
+      <h3>Что добавилось к Газпром шельфпроекту</h3>
+      <div class="sx-mini" data-draw="stack" data-source="zone"></div>
+      <ul class="sx-adds">
+        <li><span class="d">2022</span><span><b>3 буровые установки</b> от Газпрома</span></li>
+        <li><span class="d">2025</span><span><b>Фертоинг</b>, подводные работы: выручка <span data-draw="v-fe" data-source="metrics" data-field="value" data-where="id=fe_rev_2024">—</span> млрд ₽ за 2024</span></li>
+        <li><span class="d">06.2026</span><span><b>Газпром флот</b> под управлением: выручка <span data-draw="v-fl" data-source="metrics" data-field="value" data-where="id=fl_rev_2025">—</span> млрд ₽ за 2025, прибыль <span class="sx-bad" data-draw="v-p24" data-source="metrics" data-field="value" data-where="id=fl_profit_2024">—</span> → <span class="sx-ok" data-draw="v-p25" data-source="metrics" data-field="value" data-where="id=fl_profit_2025">—</span> млрд ₽</span></li>
+      </ul>
+      <span class="sx-foot">Суммы за разные годы, только для масштаба. Флот принадлежит Газпрому, компания им управляет.</span>
     </div>
   </section>
 
@@ -234,6 +235,29 @@ dash.calc('mix', {
   }
 });
 
+dash.calc('zone', {
+  title: 'Масштаб зоны управления',
+  description: 'Выручка шельфпроекта 2023, флота 2025 и Фертоинга 2024 рядом для масштаба; годы разные.',
+  inputs: ['metrics'],
+  fn: (metrics) => {
+    const g = (id) => Number((metrics.find((r) => r.id === id) || {}).value);
+    return [
+      {part: 'Газпром шельфпроект', year: '2023', value: g('sp_rev_2023')},
+      {part: 'Газпром флот', year: '2025', value: g('fl_rev_2025')},
+      {part: 'Фертоинг', year: '2024', value: g('fe_rev_2024')}
+    ];
+  }
+});
+dash.calc('added_total', {
+  title: 'Добавилось к компании',
+  description: 'Выручка Газпром флота за 2025 год плюс выручка Фертоинга за 2024 год, млрд руб.',
+  inputs: ['metrics'],
+  fn: (metrics) => {
+    const g = (id) => Number((metrics.find((r) => r.id === id) || {}).value);
+    return Math.round((g('fl_rev_2025') + g('fe_rev_2024')) * 10) / 10;
+  }
+});
+
 function sxValue(name, id, digits, signed) {
   dash.draw(name, (el) => {
     const r = SX.row(id);
@@ -245,7 +269,8 @@ function sxValue(name, id, digits, signed) {
 sxValue('v-rev', 'sp_rev_2023', 1);
 sxValue('v-profit', 'sp_profit_2023', 1);
 sxValue('v-staff', 'sp_staff', 0);
-sxValue('v-kamen', 'sp_kamen_2023', 1);
+sxValue('v-fe', 'fe_rev_2024', 1);
+sxValue('v-fl', 'fl_rev_2025', 1);
 sxValue('v-p24', 'fl_profit_2024', 3);
 sxValue('v-p25', 'fl_profit_2025', 3, true);
 sxValue('r-wells', 'sp_share_wells', 0);
@@ -254,6 +279,32 @@ document.querySelectorAll('.sx-light').forEach((d) => d.addEventListener('toggle
 dash.draw('v-margin', (el) => {
   const c = dash.data('sp_margin');
   el.textContent = c.status === 'ok' && c.data != null ? SX.num(c.data, 1) + '%' : '—';
+});
+dash.draw('v-added', (el) => {
+  const c = dash.data('added_total');
+  el.textContent = c.status === 'ok' && c.data != null ? '+' + SX.num(c.data, 1) : '—';
+});
+dash.draw('stack', (el) => {
+  const d = dash.data('zone');
+  el.replaceChildren();
+  if (d.status !== 'ok' || !d.data) { el.textContent = '—'; return; }
+  const W = el.clientWidth || 300, H = 62, total = d3.sum(d.data, (r) => r.value);
+  const x = d3.scaleLinear().domain([0, total]).range([0, W]);
+  const colors = ['var(--cds-chart-muted)', dash.colors[0], dash.colors[1] || dash.colors[0]];
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Выручка шельфпроекта и добавленных компаний для масштаба');
+  const tip = SX.tip(el);
+  let acc = 0;
+  d.data.forEach((r, i) => {
+    const x0 = x(acc), w = Math.max(2, x(r.value) - 1);
+    svg.append('rect').attr('x', x0).attr('y', 0).attr('width', w).attr('height', 26).attr('rx', 3).style('fill', colors[i])
+      .on('mousemove', (ev) => tip.show(ev, `${r.part}: ${SX.num(r.value, 1)} млрд ₽ (${r.year})`)).on('mouseleave', tip.hide);
+    acc += r.value;
+  });
+  svg.append('text').attr('x', 0).attr('y', 44).style('font-size', '12px').style('fill', 'var(--cds-text-secondary)').text(`Шельфпроект ${SX.num(d.data[0].value, 1)} (2023)`);
+  const add = d.data.slice(1);
+  svg.append('text').attr('x', W).attr('y', 44).attr('text-anchor', 'end').style('font-size', '12px').style('font-weight', 600).style('fill', 'var(--color-fg)')
+    .text('+ ' + add.map((r) => `${r.part.replace('Газпром ', '')} ${SX.num(r.value, 1)}`).join(' + '));
+  svg.append('text').attr('x', W).attr('y', 60).attr('text-anchor', 'end').style('font-size', '11px').style('fill', 'var(--cds-text-secondary)').text('млрд ₽');
 });
 dash.draw('v-fleet-g', (el) => {
   const c = dash.data('fleet_growth');
