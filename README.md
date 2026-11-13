@@ -1,51 +1,38 @@
-# Галина Тимошенко · Data Scientist
+# Galina Timoshenko
 
-**Геофизик и Data Scientist, 16 лет в нефтегазе (Газпром нефть).**
-Строю ML-модели на геоданных: от разведочного анализа и отбора признаков до внедрения в рабочие процессы инженеров.
-Сильная сторона — честная валидация на малых и шумных данных и перевод результата на язык бизнеса.
+**Аналитика для руководителей: собираю данные компании в одну картину и превращаю их в решения.**
+16 лет в нефтегазе (Газпром нефть), из них 6 лет руководства шельфовыми проектами. Оценка активов для инвестиционного комитета, проектный офис, ML-модели на геоданных, дашборды.
 
-*Geophysicist turned Data Scientist, 16 years in oil & gas. English — C1.*
+Санкт-Петербург · English C1 · [galashestakova@gmail.com](mailto:galashestakova@gmail.com)
 
----
+## Сводки по компаниям
 
-### 🔧 Сейчас
+Одна страница на компанию: ключевые цифры, карта связей, путь компании, риски и возможности. Только открытые данные, у каждой цифры есть источник.
 
-ML-прогноз эффективной толщины пласта по сейсмическим атрибутам, встроенный в workflow **tNavigator**:
+| Сводка | Что показывает |
+|---|---|
+| [Газпром шельфпроект](https://galatimoshenko.github.io/GalaTimoshenko/) | Рост компании, сделки (Фертоинг, Газпром флот), риски и возможности для гендиректора |
+| [АиГринд](https://galatimoshenko.github.io/company-dashboards/aigrind/) | Выручка +34% и убыток 2025 года, две игры, структура владения |
+| [Smart Laser](https://galatimoshenko.github.io/company-dashboards/smartlaser/) | Первый год нового ООО по данным ФНС, баланс, модельный ряд |
 
-- перебор 350+ комбинаций признаков и бенчмарк 29 моделей (scikit-learn, LightGBM, CatBoost);
-- проверка на скважинах, полностью исключённых из обучения: ошибка на **26% ниже** базового прогноза;
-- карты неопределённости по ансамблю моделей; карта на ~2 млн узлов строится примерно за минуту.
-
-
-### 🧰 Стек
-
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
-![LightGBM](https://img.shields.io/badge/LightGBM-02569B)
-![CatBoost](https://img.shields.io/badge/CatBoost-FFCC00?logoColor=black)
-![XGBoost](https://img.shields.io/badge/XGBoost-189FDD)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)
-![Airflow](https://img.shields.io/badge/Airflow-017CEE?logo=apacheairflow&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=black)
-
-**Предметная область:** сейсмика и сейсмическая инверсия, 3D-геомоделирование, оценка запасов и рисков · Petrel, tNavigator, Hampson-Russell
-
-### 📂 Проекты
+## ML на геоданных
 
 | Проект | Задача | Результат |
 |---|---|---|
+| ⭐ [seismic-thickness-ml](https://github.com/GalaTimoshenko/seismic-thickness-ml) | Прогноз толщины пласта по 3D-сейсмике, 59 точек исследования | 29 моделей, 356 комбинаций атрибутов; ошибка на Test на 15% ниже прогноза средним |
+| [OpenSource-Dataset-Volve](https://github.com/GalaTimoshenko/OpenSource-Dataset-Volve) | Та же задача на открытых данных Equinor (14 скважин): как не обмануть себя на малых данных | Контроль на перемешанном таргете, вложенная проверка, маска области применимости |
 
-| [Skillbox_Diploma_ML_Prediction](https://github.com/GalaTimoshenko/Skillbox_Diploma_ML_Prediction) | Предсказание целевого действия пользователя сайта «СберАвтоподписка», ~12 млн событий | ROC-AUC 0.71 при цели 0.65, LightGBM с байесовским подбором гиперпараметров |
-| [ML-Prediction-Test-task](https://github.com/GalaTimoshenko/ML-Prediction-Test-task) | Прогноз оттока клиентов | ROC-AUC ~0.89 на кросс-валидации, отбор признаков 43 → 24 |
-| [ML-prediction--Apache-Airflow-](https://github.com/GalaTimoshenko/ML-prediction--Apache-Airflow-) | Пайплайн «обучение → прогноз» по расписанию в Apache Airflow | DAG из двух задач, модель в pickle, прогнозы по новым данным |
-| [MLcase_Predict_Revenue](https://github.com/GalaTimoshenko/MLcase_Predict_Revenue) | Прогноз выручки пользователя за 30 дней, ~2.9 млн записей | Линейная регрессия и LightGBM, генерация признаков |
-| [STUDY-PROJECT.-SURVEY-ABOUT-IT-VACANCIES](https://github.com/GalaTimoshenko/STUDY-PROJECT.-SURVEY-ABOUT-IT-VACANCIES) | Анализ рынка IT-вакансий и онлайн-курсов | Сбор данных через API hh.ru и парсинг, дашборд Power BI |
+## Что умею
 
-### 🎓 Образование
+- **Оценка активов и сделок:** геолого-экономические модели (NPV, IRR), защита участков на инвестиционном комитете. Шельф Бахрейна, ОАЭ, Египта, Карского и Охотского морей; суша Казахстана; Боливия, Алжир, Вьетнам, Курдистан.
+- **Управление проектами:** 5 шельфовых проектов, команда до 10 человек, площадь работ 200–1000 км², система KPI для ранжирования буровых целей.
+- **Данные и автоматизация:** Python, SQL, Power BI, scikit-learn, LightGBM, Airflow, Claude Code.
 
-- MSc, Heriot-Watt University (Великобритания)
-- Санкт-Петербургский горный университет, геофизика
-- Data Scientist / ML Engineer — Skillbox; Аналитик данных — ТГУ
+## Другие проекты
 
+- [ML-пайплайн в Apache Airflow](https://github.com/GalaTimoshenko/ML-prediction--Apache-Airflow-): обучение и прогноз по расписанию.
+- [Прогноз целевого действия пользователя](https://github.com/GalaTimoshenko/Skillbox_Diploma_ML_Prediction): 12,5 млн событий, LightGBM, ROC-AUC 0,71 при цели 0,65.
+
+## Образование
+
+MSc, Heriot-Watt University · Горный университет (геофизика) · Skillbox (Data Science)
