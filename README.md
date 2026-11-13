@@ -13,7 +13,6 @@
 |---|---|
 | [Газпром шельфпроект](https://galatimoshenko.github.io/GalaTimoshenko/) | Рост компании, сделки (Фертоинг, Газпром флот), риски и возможности для гендиректора |
 | [АиГринд](https://galatimoshenko.github.io/company-dashboards/aigrind/) | Выручка +34% и убыток 2025 года, две игры, структура владения |
-| [Smart Laser](https://galatimoshenko.github.io/company-dashboards/smartlaser/) | Первый год нового ООО по данным ФНС, баланс, модельный ряд |
 
 ## ML на геоданных
 
