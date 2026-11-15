@@ -15,6 +15,7 @@
 | [ЛУКОЙЛ](https://galatimoshenko.github.io/company-dashboards/lukoil/) | Финансы без зарубежья и застрявшая продажа зарубежного бизнеса на 14–22 млрд $ |
 | [Зарубежнефть](https://galatimoshenko.github.io/company-dashboards/zarubezhneft/) | Ставка на Вьетнам: новые блоки на шельфе, обмен долями, ВЭС на 1000 МВт |
 | [АиГринд](https://galatimoshenko.github.io/company-dashboards/aigrind/) | Выручка +34% и убыток 2025 года, две игры, структура владения |
+| [tNavigator](https://galatimoshenko.github.io/company-dashboards/tnavigator/) | Разработчик ПО для моделирования месторождений: выручка втрое за 5 лет, владелец в Белграде |
 
 ## ML на геоданных
 
