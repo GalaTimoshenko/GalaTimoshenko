@@ -13,6 +13,7 @@
 |---|---|
 | [Газпром шельфпроект](https://galatimoshenko.github.io/GalaTimoshenko/) | Рост компании, сделки (Фертоинг, Газпром флот), риски и возможности для гендиректора |
 | [Газпром](https://galatimoshenko.github.io/company-dashboards/gazprom/) | Китай вместо Европы, прибыль 2025 года на курсовых разницах |
+| [НОВАТЭК](https://galatimoshenko.github.io/company-dashboards/novatek/) | Прибыль 2025 года −63% на разовых статьях, «Арктик СПГ 2» под санкциями |
 | [Газпром нефть](https://galatimoshenko.github.io/company-dashboards/gazpromneft/) | Рекордная добыча при падении прибыли, санкции и NIS |
 | [Роснефть](https://galatimoshenko.github.io/company-dashboards/rosneft/) | Прибыль 2025 года −73%, удары по НПЗ |
 | [Татнефть](https://galatimoshenko.github.io/company-dashboards/tatneft/) | Прибыль и дивиденды 2025 года, продажа шинного бизнеса |
@@ -34,7 +35,7 @@
 
 - **Оценка активов и сделок:** геолого-экономические модели (NPV, IRR), защита участков на инвестиционном комитете. Шельф Бахрейна, ОАЭ, Египта, Карского и Охотского морей; суша Казахстана; Боливия, Алжир, Вьетнам, Курдистан.
   - Пример на открытых данных: [финмодель месторождения Volve](https://galatimoshenko.github.io/company-dashboards/volve-dcf/): DCF с норвежскими налогами, NPV10 1,55 млрд NOK, IRR 35%, чувствительность, Excel с формулами.
-  - [Финансовый обзор девяти нефтегазовых компаний за 2023–2025 годы](https://galatimoshenko.github.io/company-dashboards/finance-review/): выручка, прибыль и маржа; почему у пяти из шести маржа падает второй год подряд.
+  - [Финансовый обзор десяти нефтегазовых компаний за 2023–2025 годы](https://galatimoshenko.github.io/company-dashboards/finance-review/): выручка, прибыль и маржа; почему у шести из семи маржа падает второй год подряд.
 - **Управление проектами:** 5 шельфовых проектов, команда до 10 человек, площадь работ 200–1000 км², система KPI для ранжирования буровых целей.
 - **Данные и автоматизация:** Python, SQL, Power BI, scikit-learn, LightGBM, Airflow, Claude Code.
 
